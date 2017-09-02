@@ -1,0 +1,36 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="xtal-composition">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+  </template>
+
+  <script>
+    /**
+     * `xtal-composition`
+     * Create WebCompositions
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class XtalComposition extends Polymer.Element {
+      static get is() { return 'xtal-composition'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'xtal-composition'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(XtalComposition.is, XtalComposition);
+  </script>
+</dom-module>
