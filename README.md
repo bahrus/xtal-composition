@@ -4,18 +4,17 @@ Create WebCompositions
 
 Shame about losing those HTMLImports. But let's take this opportunity to build something less granular than WebComponents while HTMLImports go down in flames.
 
-I call them WebCompositions, or WebCompost for short.
+I call them WebCompositions, or WebCompost for short (hear me out).
 
 I've observed that up until now, web component development (particularly with Polymer) has tended to fall into one of two fairly distinct categories:  1)  Crafting stable, resuable components.  These will tend to be specialized, often code-centric components, and not change very often 2) Assembling application specific, content-heavy views. These will tend to be heavy on highly fluid markup content (referred to henceforth as "mulch"), combined with declarative configuration settings.
 
-Current day world wide worm browsers are best able to digest content if it is represented as raw HTML / other markup, sprinkled with a little JavaScript pixie dust to hold it together.  In contrast to synthetic markup abstractions contained within JavaScript or Wasm.  Which the Web Component working group is pushing us to do.
+Current day world wide worm browsers are best able to digest content if it is represented as raw HTML / other markup - mulch, sprinkled with a little JavaScript pixie dust to hold it together.  In contrast to synthetic markup abstractions contained within JavaScript or Wasm.  Which the Web Component working group is pushing us to do.
 
-So let's think outside the constraints of components, and fashion a variation on components that can play well to the web's strengths even without the w3c's blessings.  A varation that could be easily converted to a resusable web component should the needs warrent.
+So let's think outside the constraints of components, and fashion a variation on components that can play well to the web's strengths even without the w3c's blessings.  A varation that could be easily converted to a resusable web component should the needs warrant.
 
 Based on the assumption that the browser would be quicker to parse and render raw HTML and CSS, we need to serve WebCompositions with MIME type HTML, not JS.
 
-So let's assume the mulch will be loaded via a simple client-side include pointing to an HTML document. The [https://www.webcomponents.org/element/bahrus/xtal-fetch] (xtal-fetch) component is one such component that might help with this.  The xtal-ref component might help load the reusable dependencies, and effectively "water the mulch," allowing the web component "seed" markup to spout (upgrade).  Neither of these two components are required for a WebComposition, but its just something to consider.
-
+So let's assume the mulch will be loaded via a simple client-side include pointing to an HTML document. The [https://www.webcomponents.org/element/bahrus/xtal-fetch] (xtal-fetch) component is one such component that might help with this.  The xtal-sip component might help load the reusable dependencies, and effectively "water the mulch," allowing the web component "seed" markup to spout (upgrade).  Neither of these two components are required for a WebComposition, but its just something to consider.
 
 The need for a trellis
 
@@ -28,7 +27,7 @@ We propose the following work in progress outline of how a web composition docum
 <xtal-composition id="myPage" customer="[[item.customer]]"> <!-- get passed properties from parent -->
     <light-children>
         <div id="myDiv"> 
-            <xtal-ref></xtal-ref> <!-- Optional component that "Waters" the web components "seeds" marked with "upgrade-me" by adding references to the document.head as needed based on a mapping file.-->
+            <xtal-sip></xtal-sip> <!-- Optional component that "Waters" the web component "seeds" marked with "upgrade-me" by adding references to the document.head as needed based on a mapping file.-->
             <my-custom-element child-prop="[[customer.LastPurchase]]" on-click="handleClickOnMyCustomElement" upgrade-me>
                 Temporary content(?) prior to being upgraded that displays immediately
             </my-custom-element>
