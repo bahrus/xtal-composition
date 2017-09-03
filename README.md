@@ -10,11 +10,11 @@ I've observed that up until now, web component development (particularly with Po
 
 Current day world wide worm browsers are best able to digest content if it is represented as raw HTML / other markup - mulch, sprinkled with a little JavaScript pixie dust to hold it together.  In contrast to synthetic markup abstractions contained within JavaScript or Wasm.  Which the Web Component working group is pushing us to do.
 
-So let's think outside the constraints of components, and fashion a variation on components that can play well to the web's strengths even without the w3c's blessings.  A varation that could be easily converted to a resusable web component should the needs warrant.
+So let's think outside the constraints of components, and fashion a variation on components that can play well to the web's strengths even without the w3c's blessings.  A variation that could be easily converted to a resusable web component should the needs warrant.
 
 Based on the assumption that the browser would be quicker to parse and render raw HTML and CSS, we need to serve WebCompositions with MIME type HTML, not JS.
 
-So let's assume the mulch will be loaded via a simple client-side include pointing to an HTML document. The [https://www.webcomponents.org/element/bahrus/xtal-fetch] (xtal-fetch) component is one such component that might help with this.  The xtal-sip component might help load the reusable dependencies, and effectively "water the mulch," allowing the web component "seed" markup to spout (upgrade).  Neither of these two components are required for a WebComposition, but its just something to consider.
+So let's assume the mulch will be loaded via a simple client-side include pointing to an HTML document. The [xtal-fetch](https://www.webcomponents.org/element/bahrus/xtal-fetch) component is one such component that might help with this.  The xtal-sip component might help load the reusable dependencies, and effectively "water the mulch," allowing the web component "seed" markup to spout (upgrade).  Neither of these two components are required for a WebComposition, but it's just something to consider.
 
 The need for a trellis
 
